@@ -3,31 +3,29 @@ local he = ScrH()/1080
 
 surface.CreateFont("Helvetica",{font = "Helvetica",size = 20*wi,weight = 450*he})
 
-bleu = Color(65, 131, 215)
-Bleu = Color(65, 131, 215)
-rouge = Color(150, 40, 27)
-Rouge = Color(150, 40, 27)
-Vert = Color(0, 177, 106)
-vert = Color(0, 177, 106)
-white = Color(255,255,255)
+local bleu = Color(65, 131, 215)
+local Bleu = Color(65, 131, 215)
+local rouge = Color(150, 40, 27)
+local Rouge = Color(150, 40, 27)
+local Vert = Color(0, 177, 106)
+local vert = Color(0, 177, 106)
+local white = Color(255,255,255)
 
 local couleurs = {
-bleu,
-Bleu,
-rouge,
-Rouge,
-Vert,
-vert,
-white
+[bleu] = true,
+[Bleu] = true,
+[rouge] = true,
+[Rouge] = true,
+[Vert] = true,
+[vert] = true,
+[white] = true
 }
-
-include("autorun/config.lua")
 
 local couleuru = ""
 
-if table.HasValue(couleurs,MTXConfig.Couleur) then couleuru = MTXConfig.Couleur else print("MTX ADDON : \n \n Mauvaise couleur enregistrée. Choisissez entre Bleu, Vert ou Rouge.") couleuru = bleu end
+if couleurs[MTXConfig.Couleur] then couleuru = MTXConfig.Couleur else print("MTX ADDON : \n \n Mauvaise couleur enregistrée. Choisissez entre Bleu, Vert ou Rouge.") couleuru = bleu end
 
-net.Receive("messa", function(len,ply)
+net.Receive("mtxad-messa", function(len,ply)
 
 			local main = vgui.Create("DFrame")
 			main:SetSize(1610*wi,935*he)
