@@ -3,8 +3,8 @@
 MTXConfig = {}
 
 MTXConfig.Commandes = {
-	"!mtx", -- Remplace par/Ajoute ce que tu veux
-	"/mtx"
+	["!mtx"] = true,
+	["!glande"] = true
 }
 
 MTXConfig.Couleur = Bleu -- Choisis entre Bleu, Vert ou Rouge
