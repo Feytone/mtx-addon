@@ -1,11 +1,11 @@
-util.AddNetworkString("messa")
+util.AddNetworkString("mtxad-messa")
 
 hook.Add("PlayerSay","CommandMtx",function(ply,text,team)
 
-	if table.HasValue(MTXConfig.Commandes,text) then
+	if MTXConfig.Commandes[text] then
 		if ply:IsValid() and ply:IsPlayer() then
 
-			net.Start("messa")
+			net.Start("mtxad-messa")
 			net.Send(ply)
 
 		end
