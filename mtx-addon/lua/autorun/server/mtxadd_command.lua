@@ -1,5 +1,3 @@
-include("autorun/config.lua")
-
 util.AddNetworkString("messa")
 
 hook.Add("PlayerSay","CommandMtx",function(ply,text,team)
